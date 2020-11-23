@@ -1,8 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
-import Profile from './components/Profile';
+import Home from './pages/Home';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
@@ -13,9 +11,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <LoginButton />
-      <LogoutButton />
-      <Profile />
+      <Home />
     </>
   );
 }
