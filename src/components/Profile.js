@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import JSONPretty from 'react-json-pretty';
+import CovidModel from '../models/covid'
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+  useEffect(()=>{
+    // CovidModel.dailyUS().then((response)=>{
+    //   console.log(response.data)
+    // })
+
+    // CovidModel.byState("CA").then((response)=>{
+    //   console.log(response.data)
+    // })
+
+    // CovidModel.byState_Date("CA",20201121).then((response)=>{
+    //   console.log(response.data)
+    // })
+
+    console.log("hello")
+  },[])
 
   return (
     isAuthenticated && ( 
