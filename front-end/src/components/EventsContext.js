@@ -6,12 +6,12 @@ export const EventsContext = createContext()
 
 export const EventsContextProvider = (props) => {
   const [data, setData] = useState()
-  const q = "Chicago"
+  const q = "covid"
   
   useEffect(() => {
     axios
     .get(
-      `https://api.predicthq.com/v1/events/?q=${q}&country=US&limit=5`, 
+      `https://api.predicthq.com/v1/events/?q=${q}&country=US`, 
       {
         headers: {
           "Authorization": `Bearer ${ACCESS_TOKEN} `,

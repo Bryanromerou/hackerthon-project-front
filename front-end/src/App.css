@@ -26,6 +26,10 @@ body {
   flex-grow: 0 !important;
 }
 
+.signed-in {
+  display: flex;
+}
+
 .home-container {
   width: 100vw;
 }
@@ -110,5 +114,41 @@ body {
 }
 
 .community-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgba(0,0,0,.6);
+  color: #FFFAE5;
+  height: 101.8%;
+  display: flex;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+}
 
+.page-footer {
+  background-color: #87AB7F;
+  width: 100vw;
+  margin-left: -3rem;
+  margin-bottom: -4rem;
+}
+
+.footer-desc {
+  background-color: #363636;
+  border-radius: 10px;
+  margin-left: -3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  padding: 40px;
+}
+
+.footer-link {
+  color: inherit;
+}
+
+.footer-copyright {
+  margin-top: 2rem;
 }
