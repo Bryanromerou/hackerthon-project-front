@@ -26,8 +26,7 @@ const SwitchBoard = () => {
         <Route path="/events">
             <Events />
         </Route>
-        <Route path="/localupdates">
-            <LocalUpdates />
+        <Route path="/localupdates" component = {LocalUpdates}>
         </Route>
         <Route path="/natural-disasters">
             <NDs />
