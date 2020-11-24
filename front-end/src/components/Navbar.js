@@ -5,7 +5,6 @@ import SwitchBoard from "../config/routes";
 import { AlertTriangle, Home, Rss, Heart, User, MoreVertical, ArrowRight, Star } from 'react-feather';
 
 const Navbar = () => {
-
     return (
         <Router>
         <>
