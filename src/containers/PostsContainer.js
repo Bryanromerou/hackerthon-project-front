@@ -1,12 +1,10 @@
 import React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
-import JSONPretty from 'react-json-pretty';
-
 import PostModel from '../models/Post';
 import ReplyModel from '../models/Reply';
-import { getFormValues } from 'redux-form';
+import CreatePostForm from '../components/CreatePostForm';
+import { formValueSelector } from 'redux-form';
 
-class Profile extends React.Component {
+class PostsContainer extends React.Component {
 
   constructor(props) {
     super(props)
@@ -14,7 +12,7 @@ class Profile extends React.Component {
     this.state = {
       posts: [],
       replies: [],
-      limitTo = 5
+      // limitTo = 5
     };
   };
 
@@ -35,15 +33,20 @@ class Profile extends React.Component {
     });
   };
 
-  onLoadMore() {
-    this.setState({
-      limitTo: this.state.limitTo + 5
-    });
-  };
+  // onLoadMore() {
+  //   this.setState({
+  //     limitTo: this.state.limitTo + 5
+  //   });
+  // };
 
   createPost = (post) => {
+
+    const selector = formValueSelector('post');
+
+    const values = selector(state, 'title', 'text');
+
     let newPost = {
-      body: post
+      body: values
     };
 
     PostModel.create(newPost).then((res) => {
@@ -111,53 +114,12 @@ class Profile extends React.Component {
 
   render() {
 
-    const { user, isAuthenticated } = useAuth0();
-
-    const postCount = this.state.posts.length;
-    const repliesCount = this.state.replies.length;
-
-    const postsList = posts.slice(0, this.state.limitTo).map((post, index) => {
-      return <li key={index}>{post}</li>
-    })
-
-
     return (
-      isAuthenticated && ( 
-        <div>
-          <img src={user.picture} alt={user.name} />
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
-          <button type="submit">Edit Profile</button>
-          <JSONPretty data={user} />
-          {/* {JSON.stringify(user, null, 2)} */}
-          <h2>Recent Activities</h2>
-          <div>
-            <h5>{postCount} Posts</h5>
-          </div>
-          <div>
-            <h5>{repliesCount} Comments</h5>
-          </div>
-          <ul>
-          {postsList}
-          </ul>
-          <h2 onClick={this.onLoadMore}>See All</h2>
-          <h5>Customize Feed</h5>
-          <span><p>Coronavirus</p>
-            <label className="switch">
-              <input type="checkbox" />
-              <span className="slider round"></span>
-            </label>
-          </span>
-          <span><p>General</p>
-            <label className="switch">
-              <input type="checkbox" />
-              <span className="slider round"></span>
-            </label>
-          </span>
-        </div>
-      )
+      <div>
+        <CreatePostForm onSubmit={this.submit} />
+      </div>
     )
   } 
 }
 
-export default Profile
+export default PostsContainer;
