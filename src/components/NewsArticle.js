@@ -1,5 +1,4 @@
 import React from 'react';
-import {NewsContext} from "./NewsContext";
 
 const NewsArticle = ({data}) => {
   return (
