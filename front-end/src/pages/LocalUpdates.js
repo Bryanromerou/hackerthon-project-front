@@ -10,8 +10,6 @@ const LocalUpdates = () => {
             setcovidData(response.data)
         });
     },[]);
-
-
     return (
         <div>
             <header className= "localupdates-header">
