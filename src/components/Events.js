@@ -9,8 +9,7 @@ function Events(props) {
   console.log(data);
 
   return (
-    <>
-      <h1 className="head__text">Events</h1>
+    <div className="container-fluid events-container">
       <div className="all__news">
         {data
           ? data.results.map((events) => (
@@ -18,7 +17,7 @@ function Events(props) {
             ))
           : "Loading"}
       </div>
-    </>
+    </div>
   );
 }
 

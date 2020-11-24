@@ -11,7 +11,7 @@ export const EventsContextProvider = (props) => {
   useEffect(() => {
     axios
     .get(
-      `https://api.predicthq.com/v1/events/?q=${q}&country=US&limit=10`, 
+      `https://api.predicthq.com/v1/events/?q=${q}&country=US&limit=5`, 
       {
         headers: {
           "Authorization": `Bearer ${ACCESS_TOKEN} `,
