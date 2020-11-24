@@ -5,6 +5,8 @@ import News from '../pages/NewsPage';
 import Events from '../pages/EventsPage';
 import Forum from '../pages/Forum';
 import NDs from '../pages/NDPage';
+import PostsContainer from '../containers/PostsContainer';
+import Feed from '../pages/Feed';
 
 const SwitchBoard = () => {
   return (
@@ -27,6 +29,12 @@ const SwitchBoard = () => {
         </Route>
         <Route path="/natural-disasters">
             <NDs />
+        </Route>
+        <Route path="/posts">
+            <PostsContainer />
+        </Route>
+        <Route path="/feed">
+            <Feed />
         </Route>
     </Switch>
     </>
