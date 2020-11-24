@@ -8,6 +8,13 @@ body {
   padding: 2rem;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
 .landing-section {
   display: flex;
   justify-content: center;
