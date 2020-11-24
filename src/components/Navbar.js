@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthNav from "./auth-nav";
-import Profile from './Profile';
+
 
 const Navbar = () => {
 
