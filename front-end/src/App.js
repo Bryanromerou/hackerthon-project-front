@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   const { isLoading } = useAuth0();
@@ -10,8 +11,10 @@ function App() {
 
   return (
     <>
-    <Navbar />
-    <Home />
+      <Router>
+        <Navbar />
+        <Home />
+      </Router>
     </>
   );
 }
