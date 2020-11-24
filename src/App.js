@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import { useAuth0 } from '@auth0/auth0-react';
 import Map from './components/Map';
+import Chart1 from './components/Chart1';
 
 function App() {
   const { isLoading } = useAuth0();
@@ -13,6 +14,7 @@ function App() {
     <>
       <Navbar/>
       <Map/>
+      <Chart1/>
     </>
   );
 }

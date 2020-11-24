@@ -10,6 +10,8 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
+    "components": "^0.1.0",
+    "coronavirusapi-wrapper": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",

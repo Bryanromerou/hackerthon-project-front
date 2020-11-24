@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -16,10 +16,14 @@ import {
   ComboboxList,
   ComboboxOption,
 } from "@reach/combobox";
+
 import "@reach/combobox/styles.css";
 import LocationModel from '../models/locations';
+import CovidModel from '../models/covid';
 import mapStyles from "../styles/mapStyles";
 
+
+const allstates = [ "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", ]
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -36,7 +40,7 @@ const options = {
   styles: mapStyles,
   zoomControl: true,
 };
-
+let temp = "";
 export default function Map (){
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -44,12 +48,22 @@ export default function Map (){
   });
 
   const [cities, setCities] = useState([]);
-  // const [hotspots, setHotspots] = useState([]);
+  const [hotspots, setHotspots] = useState([]);
   
   useEffect(()=>{
     console.log("Cities State has been modified!")
   },[cities])
 
+  useEffect(()=>{
+    const myArr = []
+    allstates.forEach((state)=>{
+      CovidModel.byState(state).then((response)=>{
+        myArr.push(response.data)
+      });
+
+    })
+    setHotspots(myArr);
+  },[]);
 
   const mapClickHandler = React.useCallback((e) => {
     LocationModel.getByLatLng(e.latLng.lat(),e.latLng.lng()).then((response)=>{
@@ -70,6 +84,9 @@ export default function Map (){
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
+    CovidModel.dailyUS().then((response)=>{
+      console.log(response);
+    })
     mapRef.current = map;
   }, []);
 
