@@ -7,11 +7,16 @@ const Profile = () => {
 
   return (
     isAuthenticated && ( 
-     <div>
+     <div className="container-fluid">
+       <section className="profile-details">
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <JSONPretty data={user} />
+       </section>
+       <section className="profile-activity">
+        <h1>This is where profile activity will go.</h1>
+       </section>
         {/* {JSON.stringify(user, null, 2)} */}
       </div>
     )
