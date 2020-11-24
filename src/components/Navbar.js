@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import AuthNav from "./auth-nav";
-import Profile from './Profile';
+import SwitchBoard from "../config/routes";
 
 const Navbar = () => {
 
     return (
+        <Router>
+        <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/home">Hackathon App</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +30,9 @@ const Navbar = () => {
             </ul>
         </div>
         </nav>
+        <SwitchBoard />
+        </>
+        </Router>
     );
 }
 
