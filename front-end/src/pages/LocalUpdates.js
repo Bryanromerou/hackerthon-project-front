@@ -37,18 +37,18 @@ const LocalUpdates = () => {
                     </div>
 
                     <div className = "covid-chart">
-                        COVID CHART PLACEHOLDER
+                    <iframe src="https://covid19chart.org/#/?start=%3E%3D50&include=CA&top=0&domain=Intl&theme=dark&bare=1" width="500" height="300"></iframe>
                     </div>
 
                     <div className = "cards-footer">
                         <div className = "card-footer-section">
                             <p>Total Cases</p>
-                            <h3>371K</h3>
-                            <p>+6,741</p>
+                            <h3>{covidData.positive}</h3>
+                            <p>+{covidData.positiveIncrease}</p>
                         </div>
                         <div className = "card-footer-section">
                             <p>Recovered</p>
-                            <h3>------------</h3>
+                            <h3>--------</h3>
                         </div>
                         <div className = "card-footer-section">
                             <p>Deaths</p>
@@ -70,7 +70,7 @@ const LocalUpdates = () => {
                     </div>
 
                     <div className = "covid-chart">
-                        Wildfires CHART PLACEHOLDER
+                        <img src="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/4B8WGzzN7mVRLSBRnIydFOh-fr0=/1440x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/I47NLEYRZNAARPCV5IQ4CTZRJU.png" alt="Earthquake Map" className = "wildfire-map"/>
                     </div>
 
                     <div className = "cards-footer">
@@ -102,8 +102,9 @@ const LocalUpdates = () => {
                     </div>
 
                     <div className = "covid-chart">
-                        Earthquakes CHART PLACEHOLDER
+                        <img src="https://mediad.publicbroadcasting.net/p/shared/npr/201912/787532580.png" alt="Earthquake Map" className = "earthquake-map"/>
                     </div>
+{/* https://bostonglobe-prod.cdn.arcpublishing.com/resizer/4B8WGzzN7mVRLSBRnIydFOh-fr0=/1440x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/I47NLEYRZNAARPCV5IQ4CTZRJU.png */}
 
                     <div className = "cards-footer">
                         <div className = "card-footer-section">
@@ -119,6 +120,7 @@ const LocalUpdates = () => {
                 </div>
             </div>
             
+            <h2 className = "saved-updates-h2">Saved Updates</h2>
             <div className = "saved-updates">
                 <div className = "saved-update">
                     Update 1
@@ -133,10 +135,19 @@ const LocalUpdates = () => {
 
             <div className = "localupdates-content">
                 <div className = "localupdates-content-left">
+                    <h3>
+                        Discussion Feed
+                    </h3>
+                    <p>Let your neighbors know what’s happening, and see what they have to say.</p>
+                    <div className = "card">
 
+                    </div>
                 </div>
                 <div className = "localupdates-content-right">
-
+                    <h3>
+                        Top News Stories in Los Angeles
+                    </h3>
+                    <h5>Important Headline That Takes Up One Line on Desktop...</h5>
                 </div>
             </div>
         </div>

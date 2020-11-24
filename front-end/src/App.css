@@ -75,7 +75,7 @@ body {
 }
 .localupdates-cards{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .card-holder{
   display: flex;
@@ -106,7 +106,6 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 150px;
   height: 200px;
   width: 100vw;
   background-color: #000000a2;
@@ -118,6 +117,7 @@ body {
   height: 90%;
   width: 20vw;
   background-color: #ffffff9d;
+}
 
 
 /* Modal Styling */
@@ -160,4 +160,22 @@ body {
 
 .community-text {
 
+}
+
+.earthquake-map{
+  height: 200px;
+  width: auto;
+}
+
+.wildfire-map{
+  height: 200px;
+  width: auto;
+}
+
+.saved-updates-h2{
+  margin-top: 450px;
+}
+
+.localupdates-content{
+  display: flex;
 }
