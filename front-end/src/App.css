@@ -54,3 +54,53 @@ body {
   width: 80% !important;
   height: 8% !important;
 }
+.localupdates-header{
+  display: flex;
+  justify-content: space-between;
+}
+.localupdates-cards{
+  display: flex;
+  justify-content: center;
+}
+.card-holder{
+  display: flex;
+  width: 300px;
+  height: 100px;
+  flex-direction: column;
+  margin: 0px 2vw;
+}
+
+.cards-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cards-footer{
+  display: flex;
+
+}
+.card-footer-section{
+  margin: 10px;
+}
+.searchbaar{
+  background-color: red;
+  width: 200px;
+  height: 10%;
+}
+.saved-updates{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 150px;
+  height: 200px;
+  width: 100vw;
+  background-color: #000000a2;
+}
+.saved-update{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 20vw;
+  background-color: #ffffff9d;
+}

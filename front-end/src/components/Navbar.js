@@ -7,7 +7,6 @@ import { AlertTriangle, Home, Rss, Heart, User, MoreVertical, ArrowRight, Star }
 const Navbar = () => {
 
     return (
-        <Router>
         <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/home">SOS</Link>
@@ -39,7 +38,6 @@ const Navbar = () => {
         </nav>
         <SwitchBoard />
         </>
-        </Router>
     );
 }
 

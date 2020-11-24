@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { useHistory } from "react-router-dom";
 import {
   GoogleMap,
   useLoadScript,
@@ -52,6 +53,8 @@ export default function Map (){
   //  Hooks
   const [cities, setCities] = useState([]);
   const [hotspots, setHotspots] = useState([]);
+  let history = useHistory();
+  console.log(history)
   
   
   useEffect(()=>{
@@ -72,6 +75,7 @@ export default function Map (){
 
   // Map click handler
   const mapClickHandler = React.useCallback((e) => {
+    let cityClicked = ""
     LocationModel.getByLatLng(e.latLng.lat(),e.latLng.lng()).then((response)=>{
 
       // Will Look through the components of an address and console log the city name that was clicked on.
@@ -81,7 +85,9 @@ export default function Map (){
             ...current,
             elem.short_name,
           ]);
+          cityClicked = elem.short_name;
           console.log(elem.short_name)
+          history.push(`/news/${cityClicked}`);
         }
       });
     })
