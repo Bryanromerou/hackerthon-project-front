@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Georgia';
+  src: URL('./static/fonts/Georgia.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +15,18 @@ body {
 
 .navbar {
   position: fixed;
+  z-index: 4000;
   top: 0;
   left: 0;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+.home-container {
   width: 100vw;
 }
 
@@ -103,4 +118,46 @@ body {
   height: 90%;
   width: 20vw;
   background-color: #ffffff9d;
+
+
+/* Modal Styling */
+
+.modal-dialog {
+  max-width: 100%;
+  margin: 2.2rem 0;
+}
+
+.modal-header {
+  padding: 0 1rem;
+  border-bottom: none;
+  font-family: 'Georgia';
+}
+
+.modal-content {
+  text-align: center;
+  background-color: rgba(17, 23, 22, .6);
+  color: #FFFAE5;
+}
+
+.close {
+  color: white;
+  opacity: 1;
+}
+
+/* Map Container Styling */
+.map-container, .searchbar-container, .community-container {
+  padding: 0;
+  margin-left: -3rem;
+}
+
+.searchbar-container {
+  margin: 2rem 0;
+}
+
+.com-img {
+  width: 100%;
+}
+
+.community-text {
+
 }
