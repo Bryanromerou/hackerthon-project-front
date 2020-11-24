@@ -21,10 +21,10 @@ const Navbar = () => {
             <li className="nav-item">
                 <Link className="nav-link" to="/news">News</Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
                 <Link className="nav-link" to="/forum">Forum</Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
                 <AuthNav />
             </li>
             </ul>
