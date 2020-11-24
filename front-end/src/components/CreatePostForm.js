@@ -31,15 +31,19 @@ class CreatePostForm extends React.Component {
     render() {
       return (
         <div>
-            
-            <select name="topics" id="topics">
-              <option value="covid-19">COVID-19</option>
-              <option value="general">General</option>
-              <option value="health">Health</option>
-              <option value="weather">Weather</option>
-              <option value="stress">Stress</option>
-              <option value="safety">Safety</option>
-            </select>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Post Categories
+      </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">COVID-19</a>
+          <a class="dropdown-item" href="#">General</a>
+          <a class="dropdown-item" href="#">Health</a>
+          <a class="dropdown-item" href="#">Weather</a>
+          <a class="dropdown-item" href="#">Stress</a>
+          <a class="dropdown-item" href="#">Safety</a>
+        </div>
+        </div>
             <h5>What's on your mind?</h5>
   
             <form onSubmit={this.handleFormSubmit}>
