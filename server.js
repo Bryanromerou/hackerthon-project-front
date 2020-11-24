@@ -25,10 +25,7 @@ app.use(function(req, res, next) {
 const routes = require('./routes');
 
 //routes -----------------------------
-app.use('/register', routes.register);
-app.use('/login', routes.login);
-app.use('/blogs', routes.blogs);
-app.use('/users', routes.users);
+app.use('/posts', routes.posts);
 
 
 app.listen(PORT, () => {
