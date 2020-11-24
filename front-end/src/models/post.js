@@ -9,17 +9,17 @@ class PostModel {
   }
 
   static create = (post) => {
-    let request = axios.get(endPoint, post)
+    let request = axios.post(endPoint, post)
     return request;
   }
 
   static delete = (post) => {
-    let request = axios.get(`${endPoint}/${post._id}`)
+    let request = axios.delete(`${endPoint}/${post._id}`)
     return request;
   }
 
   static update = (post) => {
-    let request = axios.get(`${endPoint}/${post._id}`, post)
+    let request = axios.put(`${endPoint}/${post._id}`, post)
     return request;
   }
 }
