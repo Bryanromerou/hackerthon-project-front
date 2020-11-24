@@ -5,6 +5,7 @@ import News from '../pages/NewsPage';
 import Events from '../pages/EventsPage';
 import Forum from '../pages/Forum';
 import NDs from '../pages/NDPage';
+import LocalUpdates from '../pages/LocalUpdates';
 
 const SwitchBoard = () => {
   return (
@@ -24,6 +25,9 @@ const SwitchBoard = () => {
         </Route>
         <Route path="/events">
             <Events />
+        </Route>
+        <Route path="/localupdates">
+            <LocalUpdates />
         </Route>
         <Route path="/natural-disasters">
             <NDs />

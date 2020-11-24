@@ -6,7 +6,6 @@ import { AlertTriangle, Home, Rss, Heart, User, MoreVertical, ArrowRight, Star }
 
 const Navbar = () => {
     return (
-        <Router>
         <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light py-3">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +29,6 @@ const Navbar = () => {
         </nav>
         <SwitchBoard />
         </>
-        </Router>
     );
 }
 
