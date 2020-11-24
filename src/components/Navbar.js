@@ -10,7 +10,7 @@ const Navbar = () => {
         <Router>
         <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="navbar-brand" to="/home">Hackathon App</Link>
+            <Link className="navbar-brand" to="/home">SOS</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -22,10 +22,16 @@ const Navbar = () => {
                 <li className="nav-item">
                     <Link className="nav-link" to="/news">News</Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                     <Link className="nav-link" to="/forum">Forum</Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
+                    <Link className="nav-link" to="/events">Events</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/natural-disasters">Natural Disasters</Link>
+                </li>
+                <li className="nav-item">
                     <AuthNav />
                 </li>
                 </ul>

@@ -2,7 +2,9 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from '../pages/Home';
 import ProfilePage from '../pages/ProfilePage';
 import News from '../pages/NewsPage';
+import Events from '../pages/EventsPage';
 import Forum from '../pages/Forum';
+import NDs from '../pages/NDPage';
 
 const SwitchBoard = () => {
   return (
@@ -19,6 +21,12 @@ const SwitchBoard = () => {
         </Route>
         <Route path="/forum">
             <Forum />
+        </Route>
+        <Route path="/events">
+            <Events />
+        </Route>
+        <Route path="/natural-disasters">
+            <NDs />
         </Route>
     </Switch>
     </>

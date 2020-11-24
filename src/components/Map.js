@@ -28,7 +28,7 @@ const allstates = [ "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", 
 const libraries = ["places"];
 const mapContainerStyle = {
   height: "50vh",
-  width: "50vw",
+  width: "100%",
 };
 
 const center = {
