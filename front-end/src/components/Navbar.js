@@ -24,7 +24,7 @@ const Navbar = () => {
                 </li>
                 </ul>
             </div>
-            <Link className="navbar-brand ml-2" to="/home">SOS</Link>
+            <Link className="navbar-brand ml-2" to="/">SOS</Link>
             <AuthNav />
         </nav>
         <SwitchBoard />

@@ -4,6 +4,7 @@ import ModalDialog from 'react-bootstrap/ModalDialog'
 import ModalHeader from 'react-bootstrap/ModalHeader'
 
 
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Map from '../components/Map';
 import Chart1 from '../components/Chart1';
@@ -37,14 +38,16 @@ const Home = () => {
         <p className="search-desc">Or use the searchbar</p>
       </div>
       <div className="community-container container-fluid">
-        <div className="community-text">
-          <h4 className="community-header">Connecting Communities</h4>
-          <p className="community-desc">SOS lets you keep up with your neighbors in real time. </p>
-          <p>Receive important alerts, focused only on local, relevant information, and get connected to the conversation with other nearby users.</p>
+        <div className="com-div row">
+          <div className="community-text col">
+            <h2 className="community-header">Connecting Communities</h2>
+            <p className="community-desc">SOS lets you keep up with your neighbors in real time.</p>
+            <p>Receive important alerts, focused only on local, relevant information, and get connected to the conversation with other nearby users.</p>
+          </div>
         </div>
         <img className="com-img" src={landingImage} alt="com-img" />
       </div>
-      <Chart1/>
+      <Footer />
     </div>
     );
 }

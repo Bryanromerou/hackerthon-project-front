@@ -8,12 +8,14 @@ const LogoutButton = () => {
   return (
     isAuthenticated && (
       <>
+      <div className="loggedin">
       <a className="nav-link">
-        <img src={ User } className="user-icon" alt="user"/>
+        <User className="user-icon" alt="user"/>
       </a>
       <a className="nav-link" onClick={() => logout()}>
         Sign Out
       </a>
+      </div>
       </>
     )
   )
