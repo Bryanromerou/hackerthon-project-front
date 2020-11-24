@@ -14,6 +14,7 @@ function App() {
     <>
       <Navbar/>
       <Map/>
+      <Chart1/>
     </>
   );
 }

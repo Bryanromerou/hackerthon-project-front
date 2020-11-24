@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -18,39 +18,59 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import LocationModel from '../models/locations';
+import CovidModel from '../models/covid';
 import mapStyles from "../styles/mapStyles";
+// All Required Imports
+
+// Wet code for all the states
+const allstates = [ "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", ]
 
 
+// Map Settings
 const libraries = ["places"];
 const mapContainerStyle = {
   height: "50vh",
   width: "100%",
 };
-
 const center = {
   lat: 34.007135,
   lng: -118.130739,
 };
-
 const options = {
   styles: mapStyles,
   zoomControl: true,
 };
+let temp = "";
 
+//!!!!!!!!!!!!!!!Map COMPONENT!!!!!!!!!!!!
 export default function Map (){
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
 
+  //  Hooks
   const [cities, setCities] = useState([]);
-  // const [hotspots, setHotspots] = useState([]);
+  const [hotspots, setHotspots] = useState([]);
+  
   
   useEffect(()=>{
     console.log("Cities State has been modified!")
   },[cities])
 
+  //"Component did mount"
+  useEffect(()=>{
+    const myArr = []
+    allstates.forEach((state)=>{
+      CovidModel.byState(state).then((response)=>{
+        myArr.push(response.data)
+      });
 
+    })
+    setHotspots(myArr);
+  },[]);
+
+  // Map click handler
   const mapClickHandler = React.useCallback((e) => {
     LocationModel.getByLatLng(e.latLng.lat(),e.latLng.lng()).then((response)=>{
 
@@ -72,7 +92,6 @@ export default function Map (){
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   }, []);
-
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(8);
@@ -99,27 +118,29 @@ export default function Map (){
 }
 
 
+//!!!!!!!!!!!!!!!Locate COMPONENT!!!!!!!!!!!!
 function Locate({ panTo }) {
   return (
     <button
-      className="locate"
-      onClick={() => {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            panTo({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            });
-          },
-          () => null
+    className="locate"
+    onClick={() => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          panTo({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        () => null
         );
       }}
-    >
+      >
       <img src="/compass.svg" alt="compass" />
     </button>
   );
 }
 
+//!!!!!!!!!!!!!!!Search COMPONENT!!!!!!!!!!!!
 function Search({ panTo }) {
   const {
     ready,
@@ -149,7 +170,7 @@ function Search({ panTo }) {
       const { lat, lng } = await getLatLng(results[0]);
       panTo({ lat, lng });
     } catch (error) {
-      console.log("😱 Error: ", error);
+      console.log("Error: ", error);
     }
   };
 
