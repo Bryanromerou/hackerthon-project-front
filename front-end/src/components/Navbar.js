@@ -9,33 +9,25 @@ const Navbar = () => {
     return (
         <Router>
         <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="navbar-brand" to="/home">SOS</Link>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light py-3">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div className="collapse navbar-collapse justify-content-start" id="navbarNav">
                 <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link className="nav-link" to="/profile">Profile</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/news">News</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/forum">Forum</Link>
-                </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/events">Events</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/natural-disasters">Natural Disasters</Link>
+                    <Link className="nav-link" to="/posts">Feed</Link>
                 </li>
                 <li className="nav-item">
-                    <AuthNav />
+                    <Link className="nav-link" to="/events">Wellness</Link>
                 </li>
                 </ul>
             </div>
+            <Link className="navbar-brand ml-2" to="/home">SOS</Link>
+            <AuthNav />
         </nav>
         <SwitchBoard />
         </>

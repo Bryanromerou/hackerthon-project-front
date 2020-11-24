@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import {REACT_APP_GOOGLE_MAPS_API_KEY} from '../config/key'
 import {
   GoogleMap,
   useLoadScript,
@@ -29,7 +30,7 @@ const allstates = [ "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", 
 // Map Settings
 const libraries = ["places"];
 const mapContainerStyle = {
-  height: "50vh",
+  height: "70vh",
   width: "100%",
 };
 const center = {
@@ -45,7 +46,7 @@ let temp = "";
 //!!!!!!!!!!!!!!!Map COMPONENT!!!!!!!!!!!!
 export default function Map (){
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
 
