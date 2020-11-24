@@ -6,6 +6,8 @@
 .pnp.js
 .env
 
+.config/key.js
+
 # testing
 /coverage
 

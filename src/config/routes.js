@@ -1,7 +1,7 @@
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from '../pages/Home';
 import ProfilePage from '../pages/ProfilePage';
-import News from '../pages/News';
+import News from '../pages/NewsPage';
 import Forum from '../pages/Forum';
 
 const SwitchBoard = () => {
